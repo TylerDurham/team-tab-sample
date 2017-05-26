@@ -1,0 +1,31 @@
+{
+    "$schema": "https://statics.teams.microsoft.com/sdk/v1.0/manifest/MicrosoftTeams.schema.json",
+    "manifestVersion": "0.4",
+    "id": "a9e86ee8-5dab-4e97-8992-7b1df5e58a90",
+    "version": "0.1",
+    "developer": {
+        "name": "TNBlues",
+        "websiteUrl": "http://www.example.com",
+        "privacyUrl": "http://www.example.com/privacy",
+        "termsOfUseUrl": "http://www.example.com/termsofuse"
+    },
+    "tabs": [{
+        "id": "4d6f4225-d29f-4c92-afe9-9cf1d685d09b",
+        "name": "Sample Teams Tab",
+        "description": {
+            "short": "Sample Teams Tab.",
+            "full": "Sample Teams Tab - more information later."
+        },
+        "icons": {
+            "44": "icon44.png",
+            "88": "icon88.png"
+        },
+        "accentColor": "#004578",
+        "configUrl": "https://ty.ler.ngrok.io/config.html",
+        "canUpdateConfig": true
+    }],
+    "needsIdentity": true,
+    "validDomains": [
+        "*.login.microsoftonline.com"
+    ]
+}

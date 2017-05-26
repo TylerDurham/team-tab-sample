@@ -3,7 +3,6 @@
         "declaration": true,
         "module": "commonjs",
         "moduleResolution": "node",
-        "noImplicitAny": true,
         "outDir": "./build",
         "preserveConstEnums": true,
         "removeComments": true,

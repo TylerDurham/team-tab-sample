@@ -8,7 +8,26 @@
     </head>
     <body>
 
+        <h1>Config 1</h1>
         <a href="index.html">Index</a>
+
+        <script src="https://statics.teams.microsoft.com/sdk/v1.0/js/MicrosoftTeams.min.js"></script>
+
+        <script>
+
+        microsoftTeams.initialize();
+
+        microsoftTeams.settings.setSettings({
+            entityId: "sampletab",
+            contentUrl: "https://ty.ler.ngrok.io/index.html",
+            suggestedDisplayName: "Sample Tab",
+            websiteUrl: "https://ty.ler.ngrok.io/index.html",
+            removeUrl: "https://ty.ler.ngrok.io/remove.html",
+        });
+
+        microsoftTeams.settings.setValidityState(true);
+
+        </script>
     
     </body>
 </html>

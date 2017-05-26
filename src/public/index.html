@@ -8,7 +8,62 @@
     </head>
     <body>
 
+        <h1>Index</h1>
         <a href="config.html">Config</a>
+
+        <h3>Theme</h3>
+        <p id="theme"></p>
+
+        <h3>Context</h3>
+        <p id="context"></p>
+
+        <script src="https://statics.teams.microsoft.com/sdk/v1.0/js/MicrosoftTeams.min.js"></script>
+
+        <script>
+
+        microsoftTeams.initialize();
+
+        microsoftTeams.getContext((context) => {
+            console.log(context);
+
+            themeChanged(context.theme);
+
+            html = [];
+            html.push('<ul>');
+
+            for(var prop in context) {
+                html.push(`<li><b>${prop}:</b> ${context[prop]}</li>`);
+            }
+
+            html.push('</ul>');
+
+            document.getElementById('context').innerHTML = html.join('');
+        });
+
+        microsoftTeams.registerOnThemeChangeHandler((theme) => {
+            document.getElementById('theme').innerText = theme;
+
+            themeChanged(theme);
+             
+        });
+
+        function themeChanged(theme) {
+            document.getElementById('theme').innerText = theme;
+            switch(theme) {
+                case 'contrast':
+                    document.body.style.color = 'yellow';
+                    break;
+                
+                case 'dark':
+                    document.body.style.color = 'silver';
+                    break;
+
+                default:
+                    document.body.style.color = '#000000';
+                    break;
+            }
+        }
+        </script>
     
     </body>
 </html>
